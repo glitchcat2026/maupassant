@@ -11,8 +11,9 @@
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
     <script type="text/javascript" src="<?php $this->options->themeUrl('javascript/darkmode.js?v=4'); ?>"></script> 
     <link rel="stylesheet" href="<?php $this->options->adminUrl('css/normalize.css'); ?>">
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css?v=8'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('darkmode.css'); ?>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/noto-serif-sc@5.3.0/wght.css">
     <link rel="icon" type="image/png" href="<?php $this->options->themeUrl('favicon.png'); ?>" />
     <script>
         if (localStorage.getItem('darkMode') === 'true') {
@@ -56,12 +57,12 @@ window.MathJax = {
             <div>
                 <nav id="nav-menu" class="clearfix">
                     <a class="<?php if($this->is('index')): ?>current<?php endif; ?><?php if($this->is('post')): ?>current<?php endif; ?>" href="<?php $this->options->siteUrl(); ?>"><?php _e('博客'); ?></a>
-		    <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
-		    <?php while($pages->next()): ?>
-		        <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
-		    <?php endwhile; ?>
+		            <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+		                <?php while($pages->next()): ?>
+		                <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
+                        <?php endwhile; ?>
                    <a href="javascript:void(0);" id="dark-mode">夜间模式</a>
-		</nav>
+		        </nav>
             </div>
         </div>
     </div>
