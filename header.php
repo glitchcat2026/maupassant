@@ -11,8 +11,8 @@
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
     <script type="text/javascript" src="<?php $this->options->themeUrl('javascript/darkmode.js?v=4'); ?>"></script> 
     <link rel="stylesheet" href="<?php $this->options->adminUrl('css/normalize.css'); ?>">
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css?v=8'); ?>">
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('darkmode.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css?v=20260920'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/darkmode.css'); ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/noto-serif-sc@5.3.0/wght.css">
     <link rel="icon" type="image/png" href="<?php $this->options->themeUrl('favicon.png'); ?>" />
     <script>
@@ -20,20 +20,20 @@
             document.documentElement.classList.add('dark-mode');
         }
     </script>
-<!-- begin latex support -->
-<script async type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js">
-</script>
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['$$', '$$'], ['\\[', '\\]']]
-  }
-};
-</script>
-<!-- end latex support -->
-<?php $this->header("generator=&template=&"); ?>
+    <!-- begin latex support -->
+    <script async type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js">
+    </script>
+    <script>
+    window.MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+    };
+    </script>
+    <!-- end latex support -->
+    <?php $this->header("generator=&template=&"); ?>
 </head>
 <body>
 
@@ -61,6 +61,14 @@ window.MathJax = {
 		                <?php while($pages->next()): ?>
 		                <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
                         <?php endwhile; ?>
+
+                    <span class="nav-dropdown">
+                        <a href="#" class="nav-dropdown-toggle">项目</a>
+                        <span class="nav-dropdown-menu">
+                            <a href="https://openlist.glitchcat.top">网盘</a>
+                        </span>
+                    </span>
+
                    <a href="javascript:void(0);" id="dark-mode">夜间模式</a>
 		        </nav>
             </div>

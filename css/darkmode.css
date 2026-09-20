@@ -16,7 +16,7 @@ html.dark-mode textarea {
 html.dark-mode #logo,
 html.dark-mode #nav-menu a,
 html.dark-mode .post-title,
-html.dark-mode .post-title a, 
+html.dark-mode .post-title a,
 html.dark-mode .post-content {
     color: #ddd;
 }
@@ -42,5 +42,14 @@ html.dark-mode thead tr {
 
 html.dark-mode th,
 html.dark-mode td {
+    color: #ddd;
+}
+
+html.dark-mode #nav-menu .nav-dropdown-menu {
+    background: #222;
+    border-color: #444;
+}
+
+html.dark-mode #nav-menu .nav-dropdown-menu a {
     color: #ddd;
 }
