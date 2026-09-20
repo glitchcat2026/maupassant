@@ -22,16 +22,16 @@
     		<p><?php _e('登录身份：'); ?><a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>. <a href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?> &raquo;</a></p>
             <?php else: ?>
     		<p>
-                <label for="author" class="required"><?php _e('称呼'); ?></label>
-    			<input type="text" name="author" id="author" class="text" value="<?php $this->remember('author'); ?>" />
+                <!--<label for="author" class="required"><?php _e('称呼'); ?></label>-->
+    			<input placeholder="称呼" type="text" name="author" id="author" class="text" value="<?php $this->remember('author'); ?>" />
     		</p>
     		<p>
-                <label for="mail"<?php if ($this->options->commentsRequireMail): ?> class="required"<?php endif; ?>><?php _e('邮箱'); ?></label>
-    			<input type="email" name="mail" id="mail" class="text" value="<?php $this->remember('mail'); ?>" />
+                <!--<label for="mail"<?php if ($this->options->commentsRequireMail): ?> class="required"<?php endif; ?>><?php _e('邮箱'); ?></label>-->
+    			<input placeholder="邮箱" type="email" name="mail" id="mail" class="text" value="<?php $this->remember('mail'); ?>" />
     		</p>
     		<p>
-                <label for="url"<?php if ($this->options->commentsRequireURL): ?> class="required"<?php endif; ?>><?php _e('网站'); ?></label>
-    			<input type="url" name="url" id="url" class="text" placeholder="<?php _e('http://example.com'); ?>" value="<?php $this->remember('url'); ?>" />
+                <!--<label for="url"<?php if ($this->options->commentsRequireURL): ?> class="required"<?php endif; ?>><?php _e('网站'); ?></label>-->
+    			<input placeholder="网站" type="url" name="url" id="url" class="text" value="<?php $this->remember('url'); ?>" />
     		</p>
             <?php endif; ?>
     		<p>

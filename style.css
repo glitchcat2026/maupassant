@@ -5,13 +5,20 @@
  * @version 1.3
  * @link http://pickcho.com
  */
- @font-face {
+/* @font-face {
     font-family: 'icomoon';
     src:url('fonts/icomoon.eot?-i5ysuu');
     src:url('fonts/icomoon.eot?#iefix-i5ysuu') format('embedded-opentype'),
         url('fonts/icomoon.woff?-i5ysuu') format('woff'),
         url('fonts/icomoon.ttf?-i5ysuu') format('truetype'),
         url('fonts/icomoon.svg?-i5ysuu#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -73,7 +80,7 @@ body {
     background-color:#FFF;
     color:#444;
     font-size:14px;
-    font-family:"TIBch", "Classic Grotesque W01", "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    font-family: "Times New Roman", Arial, "Helvetica Neue",  "Noto Serif SC", "Microsoft YaHei", "宋体", "STHeiti", "Hiragino Sans GB", "WenQuanYi Micro Hei", serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -92,6 +99,7 @@ mark {
     padding: 3px 3px 3px 5px;
     background: #fffdd1;
 }
+/*
 pre, code {
     background:#f8f8f8;
     font-family:Menlo, Monaco, Consolas, "Lucida Console", "Courier New", monospace;
@@ -104,12 +112,30 @@ pre {
     background: none;
     border: 1px solid #ddd;
 }
+*/
+pre, code {
+    background:#f8f8f8;
+    font-family:Menlo, Monaco, Consolas, "Lucida Console", "Courier New", monospace;
+    font-size:.92857em;
+}
+pre {
+    margin: 2em 0;
+    overflow:auto;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+}
+
+pre code {
+    display: block;
+}
+
 blockquote {
     margin:2em 1.5em;
     padding-left:1.5em;
     border-left:4px solid #ddd;
     color:#777;
 }
+/* 
 blockquote:first-letter {
     font-size:2.5em;
     line-height: 1.15;
@@ -118,9 +144,43 @@ blockquote:first-letter {
     font-weight:bolder;
     float:left;
 }
-h1, h2, h3 {
+*/
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-top: 2px solid #000;   /* 顶线 */
+  border-bottom: 2px solid #000;/* 底线 */
+}
+
+thead tr {
+  border-bottom: 1px solid #000; /* 表头分割线 */
+}
+
+th, td {
+  padding: 8px 12px;
+  text-align: left;
+  border: none; /* 去掉所有边框 */
+}
+
+th[align="left"],
+td[align="left"] {
+  text-align: left;
+}
+
+th[align="center"],
+td[align="center"] {
+  text-align: center;
+}
+
+th[align="right"],
+td[align="right"] {
+  text-align: right;
+}
+/*h1, h2, h3 {
     font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+*/
 input[type="text"], input[type="email"], input[type="url"], input[type="password"], textarea {
     padding:6px;
     border:1px solid #ddd;
@@ -164,7 +224,9 @@ textarea {
     margin:0;
 }
 #logo {
-    font:bold 42px/1.12 "Times New Roman", Georgia, Times, sans-serif;
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 1.12;
     color:#555;
 }
 #logo span {
@@ -244,17 +306,25 @@ textarea {
     padding-top:40px;
 }
 #main {
-    padding-top:20px;
+   /*  padding-top:20px; */
     float:left;
 }
 .post {
-    padding:25px 0 15px;
+    padding:40px 0 15px;
+    border-bottom: 1px solid rgb(221,221,221);
+}
+.post:last-of-type {
+    border-bottom: none;
 }
 .post-title {
-    margin:0;
-    color:#555;
-    text-align:left;
-    font:bold 25px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif;
+    margin: 0;
+    color: #555;
+    text-align: left;
+
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 1.1;
+   /* font-family: "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif;*/
 }
 .post-title a {
     color:#555;
@@ -270,13 +340,13 @@ textarea {
     font-size: 15px;
     line-height: 1.715;
     color:#444;
-    padding-top:27px;
+   /* padding-top:27px; */
 }
 .page-content{
     padding-top: 40px;
 }
 .post-content h3,.post-content h2{
-    margin: 1.4em 0 1.1em;
+    margin: 1.2em 0 1.2em;
 }
 .post-content pre, .comment-content pre {
     max-height: 320px;
@@ -290,9 +360,15 @@ textarea {
     padding:3px 5px;
     border: 1px solid #ddd;
 }
+/*
 .post-content p {
     margin:0 0 1.234em;
 }
+*/
+.post-content p {
+    margin: 1.234em 0;
+}
+
 .post-content img {
     padding:1em 0;
 }
@@ -311,7 +387,7 @@ textarea {
     font-size:1em;
 }
 .more {
-    padding:10px 0 0;
+    
 }
 .more a {
     border:none;
@@ -407,18 +483,23 @@ textarea {
 #comment-form {
     padding-top:5px;
 }
+#comment-form .col2 p {
+    position: relative;
+}
+/*
 #comment-form label {
     display:block;
     color:#888;
     position:absolute;
     margin:7px;
 }
+*/
 #comment-form input {
     padding:8px 6px;
     height:36px;
     border:solid 1px #D4D4D4;
-    background:#fdfdfd;
-    padding-left:45px;
+    background-color:#fdfdfd;
+   /*  padding-left:45px; */
     color: #555;
 }
 button.submit {
@@ -446,7 +527,7 @@ textarea.textarea {
     line-height:1.8;
     color:#222;
     font-size:14px;
-    background:#fdfdfd!important;
+    background:#fdfdfd;
     color: #555;
 }
 .col2 p, .col1 p {
@@ -709,7 +790,8 @@ img.alignright {
         padding:0.2em 0;
     }
     .post {
-        padding:12px 0;
+        padding-top:30px;
+	padding-bottom: 0;
     }
     #nav-menu a {
         padding:0 15px;

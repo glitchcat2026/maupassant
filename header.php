@@ -1,9 +1,5 @@
 <!DOCTYPE HTML>
-<html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 <head>
     <meta charset="<?php $this->options->charset(); ?>" />
 	<meta name="viewport" content="width=device-width,user-scalable=no">
@@ -13,19 +9,37 @@
             'tag'       =>  _t('标签 %s 下的文章'),
             'author'    =>  _t('%s 发布的文章')
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
-	<!--[if lt IE 9]>
-    <script type="text/javascript" src="<?php $this->options->themeUrl('javascript/html5shiv.js'); ?>"></script>
-    <![endif]-->
+    <script type="text/javascript" src="<?php $this->options->themeUrl('javascript/darkmode.js?v=4'); ?>"></script> 
     <link rel="stylesheet" href="<?php $this->options->adminUrl('css/normalize.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css'); ?>">
-    <?php $this->header("generator=&template=&"); ?>
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('darkmode.css'); ?>">
+    <link rel="icon" type="image/png" href="<?php $this->options->themeUrl('favicon.png'); ?>" />
+    <script>
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+<!-- begin latex support -->
+<script async type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js">
+</script>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<!-- end latex support -->
+<?php $this->header("generator=&template=&"); ?>
 </head>
 <body>
 
 <header id="header" class="clearfix">
     <div class="container">
         <div class="col-group">
-            <div class="site-name ">
+            <div class="site-name">
                 <?php if ($this->is('index')): ?>
                     <h1>
                         <a id="logo" href="<?php $this->options->siteUrl(); ?>">
@@ -41,12 +55,13 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="<?php if($this->is('index')): ?>current<?php endif; ?> <?php if($this->is('post')): ?>current<?php endif; ?>" href="<?php $this->options->siteUrl(); ?>"><?php _e('博客'); ?></a>
-					<?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
-					<?php while($pages->next()): ?>
-					<a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
-					<?php endwhile; ?>
-				</nav>
+                    <a class="<?php if($this->is('index')): ?>current<?php endif; ?><?php if($this->is('post')): ?>current<?php endif; ?>" href="<?php $this->options->siteUrl(); ?>"><?php _e('博客'); ?></a>
+		    <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+		    <?php while($pages->next()): ?>
+		        <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
+		    <?php endwhile; ?>
+                   <a href="javascript:void(0);" id="dark-mode">夜间模式</a>
+		</nav>
             </div>
         </div>
     </div>

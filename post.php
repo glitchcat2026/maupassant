@@ -6,7 +6,7 @@
 				<h1 class="post-title"><?php $this->title() ?></h1>
 			</header>
 			<date class="post-meta">
-				<?php $this->date('F j, Y'); ?>
+				<?php $this->date('F j, Y'); ?>, <?php echo ViewsCounter_Plugin::getViews(); ?> Views
 			</date>
 			<div class="post-content">
 				<?php $this->content(); ?>

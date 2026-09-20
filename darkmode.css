@@ -1,0 +1,46 @@
+html.dark-mode body {
+    background-color: #222;
+    color: #ddd;
+}
+
+html.dark-mode input[type="text"],
+html.dark-mode input[type="email"],
+html.dark-mode input[type="url"],
+html.dark-mode input[type="password"],
+html.dark-mode textarea {
+    background-color: #333 !important;
+    color: #ddd;
+    border-color: #555;
+}
+
+html.dark-mode #logo,
+html.dark-mode #nav-menu a,
+html.dark-mode .post-title,
+html.dark-mode .post-title a, 
+html.dark-mode .post-content {
+    color: #ddd;
+}
+
+html.dark-mode #nav-menu a.current {
+    border-bottom-color: #222;
+}
+
+html.dark-mode pre,
+html.dark-mode code {
+    background: #333;
+    color: #ddd;
+}
+
+html.dark-mode table {
+    border-top-color: #ddd;
+    border-bottom-color: #ddd;
+}
+
+html.dark-mode thead tr {
+    border-bottom-color: #ddd;
+}
+
+html.dark-mode th,
+html.dark-mode td {
+    color: #ddd;
+}
